@@ -1,18 +1,13 @@
-//function using static variable
-var myFunction = (function (pValue)
+const staticFunc = (function (pBool)
 {
-	var myStaticVar = 0;  //variable statique to treat
+	let myStaticVar = false;
 	
-	return function (pValue) {
-    //if there is a parameter passed in the function, we give it the new value, else, it keep its value
-		if(typeof pValue != 'undefined')
-			myVar = pValue;
+	return function (pBool) {
+	    //if there is a parameter passed in the function, we give it the new value, else, it keep its value
+		if(typeof (pBool) === typeof (false)) {
+			myStaticVar = pBool;
+		}
 		
-		//Feedback
-		alert(myVar);
+		return (myStaticVar);
 	};
 })();
-
-test();		//show 0
-test(5);	//show 5
-test();		//show 5
